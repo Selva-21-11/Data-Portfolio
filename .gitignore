@@ -1,0 +1,19 @@
+
+
+# Environment variables
+.env
+
+
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build and cache
+dist/
+.cache/
+*.tsbuildinfo
+
+
+# Render local config
+render.yaml
