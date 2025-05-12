@@ -3,29 +3,27 @@ import SplitText from "../blocks/TextAnimations/SplitText/SplitText";
 
 const Hero = () => {
   return (
-    <section id="hero" className="hero">
-      <div className="hero-content upgraded-hero-content">
-        <h1 className="first-line fade-in">
-          <SplitText text="DISCOVER" animation="fadeIn" delay={50} />
-        </h1>
+    <section id="hero" className="hero-section">
+      <div className="background-overlay"></div> {/* Background effect */}
+      <div className="hero-content">
+        <div className="hero-text">
+          <h1 className="hero-title fade-in">
+            <SplitText text="Hi, I'm Selva" animation="fadeIn" delay={50} />
+          </h1>
+          <p className="hero-tagline fade-in" style={{ animationDelay: "0.3s" }}>
+            Data Analyst | Insight-Driven Storyteller
+          </p>
+          <p className="hero-description fade-in" style={{ animationDelay: "0.6s" }}>
+            Transforming complex data into actionable insights with <span className="highlight-text">Python</span>,{" "}
+            <span className="highlight-text">Power BI</span>, and{" "}
+            <span className="highlight-text">Data Storytelling</span> for business growth.
+          </p>
+        </div>
 
-        <h2 className="second-line fade-in" style={{ animationDelay: "0.3s" }}>
-          <SplitText text="THIRD DIMENSION!" animation="fadeIn" delay={50} />
-        </h2>
-
-        <p className="hero-subtext fade-in" style={{ animationDelay: "0.6s" }}>
-          Elevating digital experiences with{" "}
-          <span className="highlight-text">3D & Creativity</span>
-        </p>
-
-        <nav className="cta-buttons fade-in" style={{ animationDelay: "1s" }}>
-          <a href="#portfolio" className="hero-btn primary" aria-label="View Portfolio">
-            View Work
-          </a>
-          <a href="#contact" className="hero-btn secondary" aria-label="Contact Me">
-            Contact Me
-          </a>
-        </nav>
+        <div className="cta-buttons">
+          <a href="#portfolio" className="hero-btn primary">View Portfolio</a>
+          <a href="#contact" className="hero-btn secondary">Contact Me</a>
+        </div>
       </div>
     </section>
   );
