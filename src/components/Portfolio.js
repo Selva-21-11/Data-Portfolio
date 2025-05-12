@@ -3,19 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
-    title: "Sales Dashboard",
-    description: "A Power BI dashboard analyzing regional sales trends, customer segmentation, and revenue insights.",
-    detailedDescription: "This comprehensive dashboard provides actionable insights into sales performance across regions. Features include:",
+    title: "  Supply chain Logistics Dashboard",
+    description: "A Power BI dashboard analyzing Supply chain logistcs",
+    detailedDescription: "This project is a comprehensive dashboard created to analyze freight cost, lead time, and predict future freight trends using a combination of Power BI and Python (via embedded scripts). It is structured into four sheets:",
     features: [
-      "Interactive regional sales heatmaps",
-      "Customer lifetime value analysis",
-      "Product performance breakdowns",
-      "Dynamic time period comparisons"
+      "Freight Cost Overview",
+      "Lead Time Overview",
+      "Freight Predictive Analysis",
+      "Predictive Python Visuals"
     ],
-    tools: ["Power BI", "DAX", "Excel"],
+    tools: ["Power BI", "DAX", "Excel","SQL","PowerQuery"],
     images: [
-      "./assets/img2.jpg",
-      "./assets/img2.jpg",
+      "./assets/img4.jpg",
+      "./assets/img3.jpg",
+      "./assets/img1.jpg",
       "./assets/img2.jpg"
     ],
     video: "./assets/sales_demo.mp4",

@@ -11,38 +11,38 @@ const certifications = [
     link: "https://www.coursera.org/account/accomplishments/specialization/QFRLZSGEGNB8"
   },
   {
-    name: "Power BI Analyst",
-    issuer: "Microsoft",
-    date: "2024",
-    logo: "./assets/microsoft_logo.png",
+    name: "SQL - Beginer",
+    issuer: "Hackerrank",
+    date: "2025",
+    logo: "./assets/hackerrank_logo.png",
     link: "#"
   },
   {
-    name: "SQL for Data Science",
-    issuer: "IBM",
+    name: "SQL - Intermediate",
+    issuer: "Hackerrank",
+    date: "2025",
+    logo: "./assets/hackerrank_logo.png",
+    link: "#"
+  },
+  {
+    name: "Python-Essentials",
+    issuer: "Scaler",
+    date: "2025",
+    logo: "./assets/scaler-Logo.png",
+    link: "#"
+  },
+  {
+    name: "SAP S4/HANA",
+    issuer: "Udemy",
     date: "2023",
-    logo: "./assets/ibm_logo.png",
+    logo: "./assets/Udemy_logo.png",
     link: "#"
   },
   {
-    name: "AWS Certified",
-    issuer: "Amazon",
-    date: "2023",
-    logo: "./assets/aws_logo.png",
-    link: "#"
-  },
-  {
-    name: "Tableau Desktop",
-    issuer: "Tableau",
-    date: "2023",
-    logo: "./assets/tableau_logo.png",
-    link: "#"
-  },
-  {
-    name: "Python for Data",
-    issuer: "DataCamp",
+    name: "PowerBi",
+    issuer: "Office Master",
     date: "2022",
-    logo: "./assets/datacamp_logo.png",
+    logo: "./assets/OM_logo.jpg",
     link: "#"
   }
 ];
