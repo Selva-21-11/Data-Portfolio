@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Sample project data (replace with your own)
 const projects = [
   {
-    title: "  Supply chain Logistics Dashboard",
-    description: "A Power BI dashboard analyzing Supply chain logistcs",
-    detailedDescription: "This project is a comprehensive dashboard created to analyze freight cost, lead time, and predict future freight trends using a combination of Power BI and Python (via embedded scripts). It is structured into four sheets:",
+    title: "Supply chain Logistics Dashboard",
+    description: "A Power BI dashboard analyzing Supply chain logistics",
+    detailedDescription:
+      "This project is a comprehensive dashboard created to analyze freight cost, lead time, and predict future freight trends using a combination of Power BI and Python (via embedded scripts). It is structured into four sheets:",
     features: [
       "Freight Cost Overview",
       "Lead Time Overview",
       "Freight Predictive Analysis",
       "Predictive Python Visuals"
     ],
-    tools: ["Power BI", "DAX", "Excel","SQL","PowerQuery"],
+    tools: ["Power BI", "DAX", "Excel", "SQL", "PowerQuery"],
     images: [
       "./assets/img4.jpg",
       "./assets/img3.jpg",
@@ -25,7 +27,8 @@ const projects = [
   },
   {
     title: "Python Forecasting App",
-    description: "Time-series forecasting model for sales prediction using ARIMA and Prophet, deployed via Streamlit.",
+    description:
+      "Time-series forecasting model for sales prediction using ARIMA and Prophet, deployed via Streamlit.",
     detailedDescription: "Advanced forecasting application with the following capabilities:",
     features: [
       "Multiple model comparison (ARIMA, Prophet, LSTM)",
@@ -34,15 +37,50 @@ const projects = [
       "Exportable forecasts in multiple formats"
     ],
     tools: ["Python", "Prophet", "Streamlit"],
-    images: [
-      "./assets/forecast_app1.webp",
-      "./assets/forecast_app2.webp"
-    ],
+    images: ["./assets/forecast_app1.webp", "./assets/forecast_app2.webp"],
     video: "./assets/forecast_demo.mp4",
     repoLink: "https://github.com/yourusername/forecasting-app",
     thumbnail: "./assets/forecast_thumb.webp"
   }
 ];
+
+// Card entry animation
+const cardVariants = {
+  hidden: { opacity: 0, x: -60 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  })
+};
+
+// Container + item animation for staggered detail content
+const detailContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2
+    }
+  },
+  exit: {
+    transition: { staggerChildren: 0.1, staggerDirection: -1 }
+  }
+};
+
+const detailItemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" }
+  },
+  exit: { opacity: 0, y: 30, transition: { duration: 0.3 } }
+};
 
 const Portfolio = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -68,21 +106,25 @@ const Portfolio = () => {
 
         <div className="portfolio-grid">
           {projects.map((project, index) => (
-            <div className="project-wrapper" key={index}>
+            <motion.div
+              className="project-wrapper"
+              key={index}
+              variants={cardVariants}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <motion.div
                 className={`project-card ${expandedId === index ? "expanded" : ""}`}
                 onClick={() => setExpandedId(expandedId === index ? null : index)}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.1 * index }}
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="project-thumbnail">
-                  <img 
-                    src={project.thumbnail} 
-                    alt={project.title} 
-                    className="thumbnail-image" 
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="thumbnail-image"
                   />
                 </div>
                 <div className="project-content">
@@ -105,8 +147,14 @@ const Portfolio = () => {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="details-content">
-                      <div className="details-text">
+                    <motion.div
+                      className="details-content"
+                      variants={detailContainerVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                    >
+                      <motion.div className="details-text" variants={detailItemVariants}>
                         <h4>Project Details</h4>
                         <p>{project.detailedDescription}</p>
                         <ul className="features-list">
@@ -117,15 +165,15 @@ const Portfolio = () => {
                             </li>
                           ))}
                         </ul>
-                      </div>
-                      
-                      <div className="media-grid">
+                      </motion.div>
+
+                      <motion.div className="media-grid" variants={detailItemVariants}>
                         <div className="project-images">
                           {project.images.map((img, i) => (
-                            <img 
-                              key={i} 
-                              src={img} 
-                              alt={`${project.title} screenshot ${i+1}`}
+                            <img
+                              key={i}
+                              src={img}
+                              alt={`${project.title} screenshot ${i + 1}`}
                               className="project-media"
                             />
                           ))}
@@ -138,11 +186,12 @@ const Portfolio = () => {
                             </video>
                           </div>
                         )}
-                      </div>
-                      
+                      </motion.div>
+
                       <motion.a
                         href={project.repoLink}
                         className="repo-button"
+                        variants={detailItemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         target="_blank"
@@ -150,11 +199,11 @@ const Portfolio = () => {
                       >
                         View GitHub Repository
                       </motion.a>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+/* === Portfolio Section === */
 .portfolio-section {
   background: var(--bg-color);
   color: var(--text-color);
@@ -35,37 +36,37 @@
 .portfolio-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
+  gap: 2rem;
 }
 
+/* === Project Wrapper === */
 .project-wrapper {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
+/* === Project Card === */
 .project-card {
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   cursor: pointer;
-  transition: all 0.3s ease;
   overflow: hidden;
   height: 180px;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 
-              0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  will-change: transform;
 }
 
 .project-card:hover {
   border-color: rgba(61, 90, 254, 0.3);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1),
-              0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* === Thumbnail Image === */
 .project-thumbnail {
   width: 250px;
   height: 100%;
@@ -77,13 +78,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .project-card:hover .thumbnail-image {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(0.3deg);
 }
 
+/* === Card Content === */
 .project-content {
   padding: 1.5rem;
   display: flex;
@@ -104,6 +106,7 @@
   line-height: 1.5;
 }
 
+/* === Tags === */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -122,22 +125,26 @@
   font-weight: 500;
 }
 
+/* === Expandable Project Details === */
 .project-details {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 16px 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: none;
   width: 100%;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .details-content {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .details-text h4 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
@@ -148,6 +155,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* === Features List === */
 .features-list {
   margin-bottom: 2rem;
   padding-left: 1rem;
@@ -167,11 +175,12 @@
   color: var(--accent-color);
 }
 
+/* === Media Grid === */
 .media-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  align-items: flex-start;
 }
 
 .project-images {
@@ -182,13 +191,13 @@
 
 .project-media {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   object-fit: cover;
   max-height: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* === Video Block === */
 .project-video {
   position: relative;
   height: 300px;
@@ -198,51 +207,59 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
+/* === GitHub Button === */
 .repo-button {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  align-self: flex-start;
+  padding: 0.9rem 1.6rem;
   background: var(--primary-color);
-  color: white;
+  color: #fff;
   border-radius: 30px;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(61, 90, 254, 0.25);
 }
 
 .repo-button:hover {
   background: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(61, 90, 254, 0.2);
+  box-shadow: 0 6px 14px rgba(61, 90, 254, 0.3);
 }
 
+/* === Responsive === */
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 5rem 5vw;
   }
-  
+
   .project-card {
-    height: auto;
     flex-direction: column;
+    height: auto;
   }
-  
+
   .project-thumbnail {
     width: 100%;
     height: 200px;
   }
-  
+
   .media-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .project-media {
     max-height: 200px;
   }
-  
+
   .project-video {
     height: 200px;
     order: -1;
+  }
+
+  .details-content {
+    gap: 1.5rem;
   }
 }

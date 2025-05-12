@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const certifications = [
-  // Add more certifications to fill the grid if needed
   {
     name: "Google Data Analytics",
     issuer: "Coursera",
@@ -11,7 +10,7 @@ const certifications = [
     link: "https://www.coursera.org/account/accomplishments/specialization/QFRLZSGEGNB8"
   },
   {
-    name: "SQL - Beginer",
+    name: "SQL - Beginner",
     issuer: "Hackerrank",
     date: "2025",
     logo: "./assets/hackerrank_logo.png",
@@ -47,19 +46,24 @@ const certifications = [
   }
 ];
 
+// Card entry animation with sliding, blurring, and rotating effects
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, x: -100, blur: 10, rotate: -5 },
   visible: {
     opacity: 1,
-    scale: 1,
+    x: 0,
+    blur: 0,
+    rotate: 0,
     transition: {
       type: "spring",
       stiffness: 100,
-      damping: 15
+      damping: 25,
+      duration: 0.6,
     }
   },
   hover: {
-    scale: 1.05,
+    scale: 1.1,
+    rotate: 3,
     transition: {
       type: "spring",
       stiffness: 400,
@@ -68,16 +72,32 @@ const cardVariants = {
   }
 };
 
+// Staggering animation for a smoother entry
+const staggerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2, // Stagger the appearance of cards
+      when: "beforeChildren", // Animate the children first
+    }
+  }
+};
+
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
-      <div className="certifications-container">
-        <motion.div className="certifications-header">
+      <motion.div
+        className="certifications-container"
+        initial="hidden"
+        animate="visible"
+        variants={staggerVariants}
+      >
+        <motion.div className="certifications-header" variants={cardVariants}>
           <h2>Certifications</h2>
           <p>Industry-recognized credentials validating my expertise</p>
         </motion.div>
 
-        <div className="certifications-grid">
+        <motion.div className="certifications-grid">
           {certifications.map((cert, index) => (
             <motion.div
               className="cert-card"
@@ -102,8 +122,8 @@ const Certifications = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
