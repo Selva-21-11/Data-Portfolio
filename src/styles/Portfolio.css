@@ -7,7 +7,7 @@
 }
 
 .portfolio-container {
-  max-width: 1200px;
+  max-width: 1400px;  /* Increased from 1200px */
   margin: 0 auto;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .portfolio-header h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;  /* Increased from 2.8rem */
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;  /* Increased from 1rem */
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
@@ -27,48 +27,47 @@
 }
 
 .portfolio-header p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;  /* Increased from 1.2rem */
   color: var(--subtext-color);
-  max-width: 600px;
+  max-width: 700px;  /* Increased from 600px */
   margin: 0 auto;
 }
 
 .portfolio-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;  /* Increased from 2rem */
 }
 
 /* === Project Wrapper === */
 .project-wrapper {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px; /* Increased to accommodate larger card */
   margin: 0 auto;
 }
 
 /* === Project Card === */
 .project-card {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   cursor: pointer;
   overflow: hidden;
-  height: 180px;
-  width: 100%;
+  height: 220px;
+  width: 1100px;
   transition: all 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  will-change: transform;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .project-card:hover {
-  border-color: rgba(61, 90, 254, 0.3);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);  /* Increased shadow */
 }
 
 /* === Thumbnail Image === */
 .project-thumbnail {
-  width: 250px;
+  width: 400px;  /* Increased from 320px */
   height: 100%;
   flex-shrink: 0;
   overflow: hidden;
@@ -82,158 +81,178 @@
 }
 
 .project-card:hover .thumbnail-image {
-  transform: scale(1.05) rotate(0.3deg);
+  transform: scale(1.08) rotate(0.5deg);  /* Slightly more pronounced hover effect */
 }
 
 /* === Card Content === */
 .project-content {
-  padding: 1.5rem;
+  width: 900px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
+  justify-content: flex-start; /* align to top */
+  align-items: flex-start;     /* align text to left */
 }
-
 .project-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.8rem;  /* Increased from 1.5rem */
+  margin-bottom: 1rem;  /* Increased from 0.8rem */
   color: var(--text-color);
 }
 
 .short-description {
   color: var(--subtext-color);
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  margin-bottom: 1.2rem;  /* Increased from 1rem */
+  line-height: 1.6;
+  font-size: 1.1rem;  /* Added font size */
 }
 
 /* === Tags === */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.8rem;  /* Increased from 0.6rem */
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .project-tags li {
-  background: rgba(61, 90, 254, 0.1);
+  background: rgba(61, 90, 254, 0.08);  /* Lighter background */
   color: var(--primary-color);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  padding: 0.5rem 1rem;  /* Increased padding */
+  border-radius: 24px;  /* More rounded */
+  font-size: 1rem;  /* Increased from 0.9rem */
   font-weight: 500;
+  border: 1px solid rgba(61, 90, 254, 0.2);  /* Added subtle border */
 }
 
 /* === Expandable Project Details === */
 .project-details {
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 0 0 16px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);  /* Lighter for light mode */
+  border-radius: 0 0 20px 20px;  /* Increased from 16px */
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-top: none;
   width: 100%;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.05);  /* Lighter inset shadow */
 }
 
 .details-content {
-  padding: 2rem;
+  padding: 2.5rem;  /* Increased from 2rem */
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;  /* Increased from 2rem */
 }
 
 .details-text h4 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;  /* Increased from 1.4rem */
+  margin-bottom: 1.2rem;  /* Increased from 1rem */
   color: var(--primary-color);
 }
 
 .details-text p {
   color: var(--subtext-color);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.7;  /* Increased from 1.6 */
+  margin-bottom: 1.8rem;  /* Increased from 1.5rem */
+  font-size: 1.1rem;  /* Added font size */
 }
 
 /* === Features List === */
 .features-list {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
+  margin-bottom: 2.5rem;  /* Increased from 2rem */
+  padding-left: 1.2rem;  /* Increased from 1rem */
   list-style: none;
 }
 
 .features-list li {
   color: var(--text-color);
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
+  margin-bottom: 1rem;  /* Increased from 0.8rem */
+  line-height: 1.6;
   display: flex;
   align-items: flex-start;
+  font-size: 1.1rem;  /* Added font size */
 }
 
 .feature-bullet {
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;  /* Increased from 0.5rem */
   color: var(--accent-color);
+  font-size: 1.2rem;  /* Added font size */
 }
 
 /* === Media Grid === */
 .media-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));  /* Increased min width from 300px */
+  gap: 2rem;  /* Increased from 1.5rem */
   align-items: flex-start;
 }
 
 .project-images {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));  /* Increased min width */
+  gap: 1.5rem;  /* Increased from 1rem */
 }
 
 .project-media {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;  /* Increased from 10px */
   object-fit: cover;
-  max-height: 300px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 350px;  /* Increased from 300px */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Slightly stronger shadow */
 }
 
 /* === Video Block === */
 .project-video {
   position: relative;
-  height: 300px;
+  height: 350px;  /* Increased from 300px */
 }
 
 .project-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;  /* Increased from 10px */
+}
+
+/* === Dashboard Container === */
+.dashboard-container {
+  width: 100%;
+  margin: 1.5rem 0;  /* Increased from 1rem */
+  border-radius: 12px;  /* Increased from 10px */
+}
+
+.dashboard-container iframe {
+  width: 100%;
+  min-height: 600px;  /* Increased from 500px */
+  border: none;
+  border-radius: 12px;  /* Increased from 10px */
 }
 
 /* === GitHub Button === */
 .repo-button {
   display: inline-block;
   align-self: flex-start;
-  padding: 0.9rem 1.6rem;
+  padding: 1rem 2rem;  /* Increased from 0.9rem 1.6rem */
   background: var(--primary-color);
   color: #fff;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(61, 90, 254, 0.25);
+  box-shadow: 0 4px 10px rgba(61, 90, 254, 0.3);  /* Slightly stronger shadow */
+  font-size: 1.1rem;  /* Added font size */
 }
 
 .repo-button:hover {
   background: var(--accent-color);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(61, 90, 254, 0.3);
+  transform: translateY(-3px);  /* Increased from -2px */
+  box-shadow: 0 8px 16px rgba(61, 90, 254, 0.35);  /* Increased shadow */
 }
 
 /* === Responsive === */
 @media (max-width: 768px) {
   .portfolio-section {
-    padding: 5rem 5vw;
+    padding: 6rem 5vw;  /* Increased from 5rem */
   }
 
   .project-card {
@@ -243,23 +262,49 @@
 
   .project-thumbnail {
     width: 100%;
-    height: 200px;
+    height: 250px;  /* Increased from 200px */
   }
 
   .media-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;  /* Added gap */
   }
 
   .project-media {
-    max-height: 200px;
+    max-height: 250px;  /* Increased from 200px */
   }
 
   .project-video {
-    height: 200px;
-    order: -1;
+    height: 250px;  /* Increased from 200px */
+    order: 0;
+  }
+
+  .dashboard-container iframe {
+    min-height: 350px;  /* Increased from 300px */
   }
 
   .details-content {
-    gap: 1.5rem;
+    padding: 1.8rem;  /* Increased padding */
+    gap: 2rem;  /* Increased from 1.5rem */
+  }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .portfolio-header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .portfolio-header p {
+    font-size: 1.1rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .project-tags li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 }
