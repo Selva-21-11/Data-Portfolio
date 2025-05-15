@@ -11,39 +11,39 @@ const certifications = [
     link: "https://www.coursera.org/account/accomplishments/specialization/QFRLZSGEGNB8"
   },
   {
-    name: "SQL - Beginer",
+    name: "SQL - Basics",
     issuer: "Hackerrank",
     date: "2025",
     logo: "./assets/hackerrank_logo.png",
-    link: "#"
+    link: "https://www.hackerrank.com/certificates/af24781a2e00"
   },
   {
     name: "SQL - Intermediate",
     issuer: "Hackerrank",
     date: "2025",
     logo: "./assets/hackerrank_logo.png",
-    link: "#"
+    link: "https://www.hackerrank.com/certificates/019068141915"
   },
   {
     name: "Python-Essentials",
     issuer: "Scaler",
     date: "2025",
     logo: "./assets/scaler-Logo.png",
-    link: "#"
+    link: "https://moonshot.scaler.com/s/li/Y9QoOEjSf7"
   },
   {
     name: "SAP S4/HANA",
     issuer: "Udemy",
     date: "2023",
     logo: "./assets/Udemy_logo.png",
-    link: "#"
+    link: "https://www.udemy.com/certificate/UC-166d7c88-6ebc-4c96-9891-c21f8dc3c5de/"
   },
   {
     name: "PowerBi",
     issuer: "Office Master",
     date: "2022",
     logo: "./assets/OM_logo.jpg",
-    link: "#"
+    link: "https://certx.in/certificate/36a28147-6eed-47a5-8342-e5f926ebba61341279"
   }
 ];
 
@@ -62,8 +62,8 @@ const cardVariants = {
     scale: 1.05,
     transition: {
       type: "spring",
-      stiffness: 400,
-      damping: 10
+      stiffness: 200,
+      damping: 5
     }
   }
 };

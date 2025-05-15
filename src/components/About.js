@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
   const ref = useRef(null);
@@ -33,15 +33,14 @@ const About = () => {
     }),
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: -3 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: { duration: 0.8, ease: "anticipate", delay: 0.4 },
-    },
-  };
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut", delay: 0.4 },
+  },
+};
 
   return (
     <section id="about" className="about-section" ref={ref}>
@@ -51,11 +50,18 @@ const About = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <motion.div
-          className="about-text"
-          variants={titleVariants}
-        >
-          <motion.h2 variants={titleVariants}>About Me</motion.h2>
+        <motion.div className="about-text" variants={titleVariants}>
+          <motion.h2
+            variants={titleVariants}
+            style={{
+              background: "linear-gradient(to right, var(--primary-color), var(--accent-color))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            About Me
+          </motion.h2>
+
           <motion.p custom={1} variants={textVariants}>
             I’m Selva, a passionate data analyst specializing in transforming complex data into actionable insights. With a background in [your field], I use data storytelling, analytics, and predictive modeling to help businesses grow smarter and more efficiently.
           </motion.p>
@@ -67,11 +73,7 @@ const About = () => {
               animate={isInView ? "visible" : "hidden"}
             >
               {["Data Storytelling", "Predictive Analytics", "Python & Power BI"].map((skill, index) => (
-                <motion.li
-                  key={skill}
-                  custom={index + 3}
-                  variants={textVariants}
-                >
+                <motion.li key={skill} custom={index + 3} variants={textVariants}>
                   <span className="highlight-text">{skill}</span>
                 </motion.li>
               ))}
@@ -87,6 +89,7 @@ const About = () => {
         >
           <img src="./assets/About_pic.webp" alt="Selva" />
         </motion.div>
+
       </motion.div>
     </section>
   );

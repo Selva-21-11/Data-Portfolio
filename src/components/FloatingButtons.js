@@ -6,15 +6,15 @@ function FloatingButtons({ theme, toggleTheme }) {
   return (
     <div className="fab-group">
 
-      <a href="mailto:your@email.com" className="fab" aria-label="Email">
+      <a href="mailto:selva.ranjan40@gmail.com" className="fab" aria-label="Email">
         <FaEnvelope />
       </a>
 
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="fab" aria-label="GitHub">
+      <a href="https://github.com/Selva-21-11" target="_blank" rel="noopener noreferrer" className="fab" aria-label="GitHub">
         <FaGithub />
       </a>
 
-      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="fab" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/selva-ranjan-03a5ab239/" target="_blank" rel="noopener noreferrer" className="fab" aria-label="LinkedIn">
         <FaLinkedin />
       </a>
 

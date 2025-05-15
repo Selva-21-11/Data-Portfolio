@@ -16,7 +16,7 @@ const categories = [
   },
   {
     title: "Concepts",
-    items: ["Data Cleaning", "EDA", "Machine Learning", "Data Storytelling"],
+    items: ["Data Cleaning", "Data Visulaization", "Machine Learning", "Data Storytelling"],
   },
 ];
 

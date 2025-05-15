@@ -53,7 +53,6 @@ const projects = [
     tools: ["Python", "Langchain", "Prompt Engineering", "LLM"],
     type: "regular",
     images: [
-      "./assets/img1.jpg"
     ],
     video: "https://youtu.be/7wejf8bCyHk",
     repoLink: "https://github.com/Selva-21-11/TextQuest.git",
