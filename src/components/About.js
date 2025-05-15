@@ -63,7 +63,7 @@ const imageVariants = {
           </motion.h2>
 
           <motion.p custom={1} variants={textVariants}>
-            I’m Selva, a passionate data analyst specializing in transforming complex data into actionable insights. With a background in [your field], I use data storytelling, analytics, and predictive modeling to help businesses grow smarter and more efficiently.
+            I’m Selva, a passionate data analyst specializing in transforming complex data into actionable insights. With a background in Mechanical Engineering, I use data storytelling, analytics, and predictive modeling to help businesses grow smarter and more efficiently.
           </motion.p>
 
           <motion.div className="skills" custom={2} variants={textVariants}>
