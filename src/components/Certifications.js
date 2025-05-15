@@ -38,6 +38,13 @@ const certifications = [
     logo: "./assets/Udemy_logo.png",
     link: "https://www.udemy.com/certificate/UC-166d7c88-6ebc-4c96-9891-c21f8dc3c5de/"
   },
+    {
+    name: "SAP Cloud Analytics - 2025",
+    issuer: "Udemy",
+    date: "2023",
+    logo: "./assets/Udemy_logo.png",
+    link: "https://www.udemy.com/certificate/UC-9c674429-a544-4e76-8c1a-87033246dc3c/"
+  },
   {
     name: "PowerBi",
     issuer: "Office Master",
