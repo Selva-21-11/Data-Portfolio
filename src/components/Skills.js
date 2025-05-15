@@ -8,7 +8,7 @@ const categories = [
   },
   {
     title: "Tools",
-    items: ["Power BI", "Excel", "Git", "Tableau"],
+    items: ["Power BI", "Excel", "Git", "Tableau","SAP ERP"],
   },
   {
     title: "Libraries",
