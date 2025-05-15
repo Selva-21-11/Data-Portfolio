@@ -25,6 +25,26 @@ const projects = [
     repoLink: "https://github.com/Selva-21-11/Supply_chain_logistics_project.git",
     thumbnail: "./assets/SCLD.webp"
   },
+   {
+    title: "Global AI Adoption & Impact - Dashboard",
+    description: "Global AI Adoption & Impact Dashboard – Strategic Insights from 50+ Countries",
+    detailedDescription: "An interactive Power BI dashboard that visualizes the global impact of AI on business performance, workforce dynamics, and public trust, helping stakeholders make data-driven decisions on AI investments and strategy.",
+    features: [
+      "Identifies leading and lagging regions in AI adoption, revenue impact, and public trust.",
+      "Shows how AI implementation correlates with financial performance across regions.",
+      "Analyzes the effect of AI collaboration on job displacement or retention.",
+      "Evaluates how regulatory environments influence public trust and technology adoption."
+    ],
+    tools: ["PowerBi", "PowerQuery"],
+    type: "regular",
+    images: [
+      "./assets/img11.png",
+      "./assets/img12.png"
+    ],
+    video: "https://youtu.be/wEvTGedPwH8",
+    repoLink: "https://github.com/Selva-21-11/Global-AI-Adoption-Impact-Dashboard.git",
+    thumbnail: "./assets/GAD.webp"
+  },
   {
     title: "Procurement KPI Analysis - Dashboard",
     description: "Tableau dashboard analyzing logistics data",
