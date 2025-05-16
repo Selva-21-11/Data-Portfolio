@@ -7,7 +7,8 @@ import "./styles/Portfolio.css";
 import "./styles/Certifications.css";
 import "./styles/Contact.css";
 
-import FloatingButtons from "./components/FloatingButtons"; // Import the floating buttons component
+
+import FloatingButtons from "./components/FloatingButtons";
 
 // Lazy-loaded components
 const Hero = lazy(() => import("./components/Hero"));
@@ -20,13 +21,11 @@ const Contact = lazy(() => import("./components/Contact"));
 function App() {
   const [theme, setTheme] = useState("light");
 
-  // Load theme from localStorage on first render
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
   }, []);
 
-  // Apply theme to the root element and persist it
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -36,9 +35,25 @@ function App() {
     setTheme(prev => (prev === "light" ? "dark" : "light"));
   };
 
+const Preloader = () => (
+  <div className="preloader">
+    <svg className="spinner" viewBox="0 0 50 50">
+      <circle
+        className="path"
+        cx="25"
+        cy="25"
+        r="20"
+        fill="none"
+        stroke="var(--primary-color)"
+        strokeWidth="5"
+      ></circle>
+    </svg>
+  </div>
+);
+
   return (
     <div className="App">
-      <Suspense fallback={<div className="loading">Loading...</div>}>
+      <Suspense fallback={<Preloader />}>
         <section id="hero">
           <Hero />
         </section>
@@ -64,7 +79,6 @@ function App() {
         </section>
       </Suspense>
 
-      {/* Floating action buttons including theme toggle */}
       <FloatingButtons theme={theme} toggleTheme={toggleTheme} />
     </div>
   );
