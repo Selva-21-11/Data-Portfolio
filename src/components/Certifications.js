@@ -11,6 +11,13 @@ const certifications = [
     link: "https://www.coursera.org/account/accomplishments/specialization/QFRLZSGEGNB8"
   },
   {
+    name: "Deloitte Data Analytics Job Simulation",
+    issuer: "Forage",
+    date: "2025",
+    logo: "./assets/Forage_logo.png",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_kPYHn8vNPJ3KfQuSb_1747199684798_completion_certificate.pdf"
+  },
+  {
     name: "SQL - Basics",
     issuer: "Hackerrank",
     date: "2025",
@@ -39,7 +46,7 @@ const certifications = [
     link: "https://www.udemy.com/certificate/UC-166d7c88-6ebc-4c96-9891-c21f8dc3c5de/"
   },
     {
-    name: "SAP Cloud Analytics - 2025",
+    name: "SAP Cloud Analytics",
     issuer: "Udemy",
     date: "2023",
     logo: "./assets/Udemy_logo.png",
